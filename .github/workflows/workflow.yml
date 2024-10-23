@@ -1,0 +1,13 @@
+name: CI workflow
+on:
+    push: #  event as the first event that can trigger the workflow. 
+        branches: [ "main" ]
+    pull_request:
+        branches: [ "main" ]
+
+
+jobs: # a job called build to the workflow file, this job will run on thhe ubuntu-latest runner
+  build:
+    runs-on: ubuntu-latest
+    # This project was developed on Python 3.9, so you need to ensure that the CI pipeline also runs on the same version of Python. 
+    container: python:3.9-slim
